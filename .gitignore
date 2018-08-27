@@ -1,0 +1,7 @@
+# JetBrains IDE
+.idea
+*.iml
+
+# sbt
+project
+target
