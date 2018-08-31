@@ -1,0 +1,17 @@
+
+{
+  "backend": {
+    "type": "file",
+   "path": "data/catalog"
+  },
+  "reprojectMethod": "buffered",
+  "encoding":"geotiff",
+  "tileSize": 256,
+  "pyramid": false,
+  "resampleMethod": "nearest-neighbor",
+  "keyIndexMethod": {
+    "type": "zorder"
+  },
+  "layoutScheme": "floating",
+  "crs":"EPSG:32654"
+}

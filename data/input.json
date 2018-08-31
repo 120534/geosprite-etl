@@ -1,0 +1,11 @@
+[
+{
+	"name":"landsat",
+	"format":"multiband-geotiff",
+	"backend":{
+		"type":"hadoop",
+		"path":"E:\\geotrellis-landsat-tutorial-master\\data\\r-g-nir.tif"
+	},
+	"cache":"NONE"
+}
+]
