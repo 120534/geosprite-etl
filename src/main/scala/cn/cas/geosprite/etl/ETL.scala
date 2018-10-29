@@ -1,6 +1,6 @@
 package cn.cas.geosprite.etl
 
-import geotrellis.raster.MultibandTile
+import geotrellis.raster.{MultibandTile, Tile}
 import geotrellis.spark.SpatialKey
 import geotrellis.spark.etl.Etl
 import geotrellis.spark.util.SparkUtils

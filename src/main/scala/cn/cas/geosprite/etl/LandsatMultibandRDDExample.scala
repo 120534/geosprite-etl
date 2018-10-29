@@ -46,7 +46,7 @@ object LandsatMultibandRDDExample {
       val redSourceTiles =
         S3GeoTiffRDD[ProjectedExtent, LandsatKey, Tile](
           "landsat-pds",
-          "L8/139/045/LC81390452014295LGN00/LC81390452014295LGN00_B2.TIF",
+          "c1/L8/122/030/LC08_L1TP_122030_20171226_20180103_01_T1/LC08_L1TP_122030_20171226_20180103_01_T1_B4.TIF",
           uriToKey(0),
           options
         )
@@ -54,7 +54,7 @@ object LandsatMultibandRDDExample {
       val greenSourceTiles =
         S3GeoTiffRDD[ProjectedExtent, LandsatKey, Tile](
           "landsat-pds",
-          "L8/139/045/LC81390452014295LGN00/LC81390452014295LGN00_B3.TIF",
+          "c1/L8/122/030/LC08_L1TP_122030_20171226_20180103_01_T1/LC08_L1TP_122030_20171226_20180103_01_T1_B3.TIF",
           uriToKey(1),
           options
         )
@@ -62,7 +62,7 @@ object LandsatMultibandRDDExample {
       val blueSourceTiles =
         S3GeoTiffRDD[ProjectedExtent, LandsatKey, Tile](
           "landsat-pds",
-          "L8/139/045/LC81390452014295LGN00/LC81390452014295LGN00_B4.TIF",
+          "c1/L8/122/030/LC08_L1TP_122030_20171226_20180103_01_T1/LC08_L1TP_122030_20171226_20180103_01_T1_B2.TIF",
           uriToKey(2),
           options
         )
@@ -129,7 +129,7 @@ object LandsatMultibandRDDExample {
           }
           .stitch
 
-      GeoTiff(raster, metadata.crs).write("/data/landsat-test.tif")
+      GeoTiff(raster, metadata.crs).write("E:\\aws\\landsat-test.tif")
     } finally {
       sc.stop()
     }

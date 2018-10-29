@@ -4,6 +4,7 @@ import java.io.File
 
 import cn.cas.index.caculation.Calculations
 import com.typesafe.config.ConfigFactory
+import geotrellis.proj4.CRS
 import geotrellis.raster.io.geotiff.SinglebandGeoTiff
 import geotrellis.raster.render.ColorMap
 import geotrellis.raster.resample.Bilinear
@@ -40,6 +41,7 @@ object NDVIStitch {
     val ndviTile = tiled.map(myfuncPerElement)
 
     val resultRdd:TileLayerRDD[SpatialKey] = new ContextRDD(ndviTile, rasterMetaData)
+
 
     SinglebandGeoTiff(resultRdd.stitch(),resultRdd.metadata.extent,resultRdd.metadata.crs).write("E://ndvi_tiled.tif")
 

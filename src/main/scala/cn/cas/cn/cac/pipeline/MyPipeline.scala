@@ -54,8 +54,8 @@ object MyPipeline {
       """
         |[
         |  {
-        |    "uri" : "s3://landsat-pds/c1/L8/118/026/LC08_L1TP_118026_20180421_20180421_01_RT/LC08_L1TP_118026_20180421_20180421_01_RT_B1.TIF",
-        |    "type" : "singleband.spatial.read.s3"
+        |    "uri" : "E:\\aws\\LC08_L1TP_122030_20171226_20180103_01_T1_B3.TIF",
+        |    "type" : "singleband.spatial.read.hadoop"
         |  },
         |  {
         |    "resample_method" : "nearest-neighbor",
@@ -78,7 +78,7 @@ object MyPipeline {
         |  },
         |  {
         |    "name" : "landsat",
-        |    "uri" : "E://catalog//catalog",
+        |    "uri" : "s3://chd-landsat/landsat",
         |    "key_index_method" : {
         |      "type" : "zorder"
         |    },
@@ -102,10 +102,10 @@ object MyPipeline {
         // eval evaluates the pipeline
         // the result type of evaluation in this case would ben Stream[(Int, TileLayerRDD[SpatialKey])]
         node.eval
-//          .foreach { case (zoom, rdd) =>
-//          println(s"ZOOM: ${zoom}")
-//          println(s"COUNT: ${rdd.count}")
-//        }
+          .foreach { case (zoom, rdd) =>
+          println(s"ZOOM: ${zoom}")
+          println(s"COUNT: ${rdd.count}")
+        }
       }
     }
 

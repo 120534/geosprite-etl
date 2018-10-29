@@ -46,7 +46,7 @@ object PipelineTest {
         |  },
         |  {
         |    "name" : "mask",
-        |    "uri" : "E://catalog//catalog",
+        |    "uri" : "s3://",
         |    "key_index_method" : {
         |      "type" : "zorder"
         |    },
